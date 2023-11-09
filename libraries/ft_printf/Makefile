@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: osg <osg@student.42.fr>                    +#+  +:+       +#+         #
+#    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 10:25:50 by oseivane          #+#    #+#              #
-#    Updated: 2023/06/23 14:37:39 by osg              ###   ########.fr        #
+#    Updated: 2023/11/09 12:58:10 by oseivane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBTEST     = ftprintf
 
 NAME 	= 	libftprintf.a
 
-SRC		= 	ft_add_str.c ft_bzero.c ft_convert_base.c ft_number_size.c \
+SRC		= 	ft_add_str.c ft_bzero.c ft_convert_base.c \
 			ft_printf.c ft_strlen.c print_char.c print_hex_may.c print_hex_min.c ft_convert_ubase.c\
 			print_nb.c print_ptr.c  print_string.c print_udec.c ft_strjoin.c ft_convert_ptr.c\
 
@@ -27,7 +27,7 @@ OBJ 	= 	$(SRC:.c=.o)
 
 INCLUDES = libftprintf.h
 
-#CFLAGS  =  -Wall -Werror -Wextra
+CFLAGS  =  -Wall -Werror -Wextra
 
 %.o:%.c $(INCLUDES)
 	@ $(CC) $(CFLAGS) -c $< -o $@

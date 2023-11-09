@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_number_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 10:50:50 by oseivane          #+#    #+#             */
-/*   Updated: 2023/06/23 14:36:15 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/09 12:10:27 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_number_size(int number)
+unsigned int	ft_number_size(unsigned long long number)
 {
-	unsigned int	length;
+	unsigned long long	length;
 
 	length = 0;
 	if (number == 0)

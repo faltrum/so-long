@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:53:43 by oseivane          #+#    #+#             */
-/*   Updated: 2023/05/22 10:59:53 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:07:14 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int					ft_strncmp(const char *s1, char *s2, size_t n);
 char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 void				ft_add_str(char *str, char caracter);
-unsigned int		ft_number_size(int number);
+unsigned int		ft_number_size(unsigned long long number);
 int					ft_strcmp(const char *s1, char *s2);
 /*
 Bonus
