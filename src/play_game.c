@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   play_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 11:23:03 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 13:11:55 by oseivane         ###   ########.fr       */
+/*   Created: 2023/11/06 14:42:58 by oseivane          #+#    #+#             */
+/*   Updated: 2023/11/09 12:13:14 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int argc, char **argv)
-{
-	t_game	play;
+//con esta funci'on empieza todo.
 
-	ft_init_values(&play);
-	if (argc == 2)
-	{
-		ft_play_game(argv[1], &play);
-	}
-	ft_printf("Error\n");
-	return (0);
+void	play_game(char *map, t_game *game)
+{
+	(void)map;
+	(void)game;
+	//parsear y filtros para checkear que todo esta ok.
+	ft_go(game);
 }

@@ -6,7 +6,7 @@
 #    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:11:16 by oseivane          #+#    #+#              #
-#    Updated: 2023/10/19 14:23:35 by oseivane         ###   ########.fr        #
+#    Updated: 2023/11/09 13:10:05 by oseivane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,19 @@ LIB_DIR = libraries/libft
 
 FT_PRINTF_DIR = libraries/ft_printf
 
+INCLUDES_DIR = ./includes/*.h
+
 INCLUDES_LIB = -I./$(LIB_DIR)
 
 INCLUDES_LIB += -I./$(FT_PRINTF_DIR)
 
+INCLUDES_LIB += -I./$(MLX_DIR)
+
 LIB = -L./$(LIB_DIR) -lft
 
-LIB += -L./$(FT_PRINTF_DIR) -lft
+LIB += -L./$(FT_PRINTF_DIR) -lftprintf
+
+LIB += -L./$(MLX_DIR) -lmlx -g -framework OpenGl -framework AppKit
 
 CFLAGS = -Werror -Wall -Wextra
 
@@ -49,7 +55,7 @@ all: libraries $(NAME)
 $(NAME):	$(OBJECTS)
 		gcc $(CFLAGS) $(OBJECTS) $(INCLUDES) $(INCLUDES_LIB) $(LIB) -o $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCLUDES_DIR) | $(OBJF)
 			gcc $(CFLAGS) $(INCLUDES) $(INCLUDES_LIB) -c $< -o $@
 $(OBJF):
 		@mkdir -p $(OBJ_DIR)
