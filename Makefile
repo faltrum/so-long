@@ -6,7 +6,7 @@
 #    By: osg <osg@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:11:16 by oseivane          #+#    #+#              #
-#    Updated: 2023/11/11 18:50:36 by osg              ###   ########.fr        #
+#    Updated: 2023/11/11 19:23:37 by osg              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ SRC = 	so_long \
 		ft_frees \
 		parse_check_map \
 		render_all \
+		key_hook \
+		press_key \
 
 SOURCES = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC)))
 

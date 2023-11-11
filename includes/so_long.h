@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/11 18:51:06 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/11 19:24:10 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	ft_check_map(t_game *map);
 char	*ft_strjoin_sub(char *s1, char *s2);
 void	ft_map_render(t_game *map, int i);
 void	ft_img_render(t_game *map);
-
+int		ft_key_hook(int keycode, t_game *map);
+void	ft_wkey(t_game *map);
+void	ft_skey(t_game *map);
+void	ft_dkey(t_game *map);
+void	ft_akey(t_game *map);
 
 #endif
