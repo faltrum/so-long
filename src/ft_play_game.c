@@ -3,22 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_play_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:02 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 12:42:56 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:28:40 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+//Aqui empieza el reparto de faena en el juego
+
 void	ft_play_game(char *map, t_game *a)
 {
-	(void)map;
-	(void)a;
+	int	fd;
 
-//desarrollar la funcion del play game
-//Control de errores
-//cargar mapas de archivos
-//cerrar ventanas con ESC
+	if (!ft_format_ber(map))
+		ft_error("Formato de mapa erroneo!\n", game);
+	fd = open(map, O_RDONLY);
+	if (fd == -1)
+		ft_error("No hay fichero o directorio!\n", game);
+	parse_map(fd, game);
+	ft_go(game);
 }

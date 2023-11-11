@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 11:23:03 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/11 17:19:43 by osg              ###   ########.fr       */
+/*   Created: 2023/11/11 17:46:34 by osg               #+#    #+#             */
+/*   Updated: 2023/11/11 17:50:51 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	main(int argc, char **argv)
-{
-	t_game	game;
+//liberacion de valores mapall y mlx
 
-	ft_init_values(&game);
-	if (argc == 2)
-	{
-		ft_play_game(argv[1], &game);
-	}
-	ft_printf("Error\n");
-	return (0);
+void	ft_free_map(t_game *map)
+{
+	free(map->mapall);
+	if (map->mlx)
+		free(map->mlx);
+}
+
+// Funcion que cierra ventana y libera lo anterior
+int	ft_close(t_game *map)
+{
+	mlx_destroy_window(map->mlx, map->win);
+	ft_free_map(map);
+	exit(EXIT_SUCCESS);
 }

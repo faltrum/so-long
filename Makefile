@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
+#    By: osg <osg@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:11:16 by oseivane          #+#    #+#              #
-#    Updated: 2023/11/09 13:10:05 by oseivane         ###   ########.fr        #
+#    Updated: 2023/11/11 18:50:36 by osg              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,12 @@ OBJF = .cache_exists
 SRC = 	so_long \
 		ft_play_game \
 		ft_init_values \
+		ft_go \
+		ft_format_ber \
+		ft_error \
+		ft_frees \
+		parse_check_map \
+		render_all \
 
 SOURCES = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC)))
 

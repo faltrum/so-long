@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   play_game.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 14:42:58 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 12:13:14 by oseivane         ###   ########.fr       */
+/*   Created: 2023/11/11 17:39:53 by osg               #+#    #+#             */
+/*   Updated: 2023/11/11 17:42:43 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//con esta funci'on empieza todo.
+//Funcion que imprime error, sale del juego y hace frees
 
-void	play_game(char *map, t_game *game)
+void	ft_error(char *str, t_game *game)
 {
-	(void)map;
-	(void)game;
-	//parsear y filtros para checkear que todo esta ok.
-	ft_go(game);
+	if (game->mapall)
+		free(game->mapall);
+	ft_printf("Error\n");
+	ft_pustr_fd(str, 1);
+	exit(EXIT_FAILURE);
 }

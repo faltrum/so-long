@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 12:48:48 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/11 18:51:06 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,18 @@ typedef struct s_game
 
 void	ft_play_game(char *argv, t_game *a);
 void	ft_init_values(t_game *game);
-void	play_game(char *map, t_game *game);
 void	ft_go(t_game *map);
+int		ft_format_ber(char *map_f);
+void	ft_error(char *str, t_game *game);
+void	ft_free_map(t_game *map);
+int		ft_close(t_game *map);
+void	parse_map(int fd, t_game *game);
+int		ft_check_line(t_game *map, char **line, int fd);
+int		ft_check_line_sub(t_game *map, char **line, int i);
+void	ft_check_map(t_game *map);
+char	*ft_strjoin_sub(char *s1, char *s2);
+void	ft_map_render(t_game *map, int i);
+void	ft_img_render(t_game *map);
+
 
 #endif

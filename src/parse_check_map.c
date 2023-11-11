@@ -1,0 +1,135 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_check_map.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
+/*   Updated: 2023/11/11 18:34:30 by osg              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/so_long.h"
+
+//ESta funcion concatena 2 strings
+// Anyade un NULL check y cierra el juego
+//si hay algun error.
+
+char	*ft_strjoin_sub(char *s1, char *s2)
+{
+	char *new;
+	char *tmp;
+
+	if (s1 == NULL)
+		return (ft_strtrim(s2, "\n"));
+	tmp = ft_strjoin(s1, s2);
+	if (!tmp);
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	new = ft_strtrim(tmp, "\n");
+	free(tmp);
+	return (new);
+}
+
+//Esta funcion  checkea que todo sea ligal en el juego
+
+void	ft_check_map(t_game *map)
+{
+	int	i;
+	int	j;
+
+	i = map->width;
+	while (i > -1)
+	{
+		if (map->mapall[i] != '1')
+			ft_error("MApa no valido!\n", map);
+		i--;
+	}
+	i = map->width;
+	j = ft_strlen(map->mapall);
+	while (i > -1)
+	{
+		if (map->mapall[j - 1] != '1')
+			ft_error("Map no valido!\n", map);
+		j--;
+		i--;
+	}
+	if (map->width > 26 || map->height > 14)
+		ft_error("Mapa no cabe en la ventana\n", map);
+}
+
+//Funcion que checkea top and bottom del mapa
+
+int	ft_check_line_sub(t_game *map, char **line, int i)
+{
+	if ((*line)[i] != '1')
+	{
+		free(*line);
+		ft_error("Mapa no valido!\n", map);
+	}
+	return (1);
+}
+
+//Funcion que checkea el mapa todo ok y el width del mismo
+
+int	ft_check_line(t_game *map, char **line, int fd)
+{
+	int		i;
+	char	+tmp;
+
+	i = ft_check_line_sub(map, line, 0);
+	while ((*line)[i + 1] != '\n' && (*line)[i + 1])
+	{
+		if ((*line)[i] != '1' && (*line)[i] != '0' && (*line)[i] != 'C'
+				&& (*line)[i] != 'E' && (*line)[i] != 'P')
+		{
+			free(*line);
+			ft_error("Mapa no valido\n", map);
+		}
+		i++;
+	}
+	i = i + ft_check_line_sub(map, line, i);
+	tmp = map->mapall;
+	map->mapall = ft_strjoin_sub(tmp, *line);
+	free(tmp);
+	free(*line);
+	if (i != map->width && map->width != 0)
+		ft_error("Mapa no valido\n", map);
+	*line = get_next_line(fd);
+	map->height++;
+	return (i);
+}
+
+//Esta funcion leee mapa con GNL.
+//Después hace checkeos para ver si el mapa es valido
+void	parse_map(int fd, t_game *game)
+{
+	int		i;
+	char	*line;
+
+	line = get_next_line(fd);
+	if (!line)
+		ft_error("Mapa no valido!\n", game);
+	while (line != NULL)
+		game->width = ft_check_line(game, &line, fd);
+	close(fd);
+	ft_check_map(game);
+	i = 0;
+	fd = 0;
+	while (game->mapall[fd])
+	{
+		if (game->mapall[fd] == 'C')
+			game->max_score++;
+		if (game->mapall[fd] == 'P')
+			game->players++;
+		if (game->mapall[fd] == 'E')
+			i++;
+		fd++;
+	}
+	if ((game->width == game->height) || game->players !=1
+			|| i == 0 || game->max_score == 0)
+			ft_error("Mapa no valido!\n", game);
+}
