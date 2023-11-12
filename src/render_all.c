@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:38:13 by osg               #+#    #+#             */
-/*   Updated: 2023/11/11 18:49:42 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/12 05:15:45 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_img_render(t_game *map)
 		free(map->win);
 		free(map->mlx);
 		ft_printf("Error\n");
-		ft_pustr_fd("Archivo imagen falta!\n", 1);
+		ft_putstr_fd("Archivo imagen falta!\n", 1);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -44,7 +44,7 @@ void	ft_map_render(t_game *map, int i)
 	char	*s;
 
 	y = -1;
-	while (y++ < map->height)
+	while (y++ < map->heigth)
 	{
 		x = 0;
 		while (x < map->width)

@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/12 04:58:47 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/12 05:14:16 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 typedef struct s_game
 {
 	void	*wall;
-	void	*mapall;
+	char	*mapall;
 	void	*item;
 	void	*exit;
 	void	*player;

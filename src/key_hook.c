@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:03:08 by osg               #+#    #+#             */
-/*   Updated: 2023/11/11 19:08:14 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/12 05:16:23 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_key_hook(int keycode, t_game *map)
 		ft_akey(map);
 	if (map->gameover > 0)
 		ft_close(map);
-	mlx_clear_window(map_mlx, map->win);
-	ft_map_render(map, 0);
+	mlx_clear_window(map->mlx, map->win);
+	ft_map_r(map, 0);
 	return (0);
 }
