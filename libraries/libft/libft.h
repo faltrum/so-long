@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:53:43 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 12:07:14 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/12 04:44:39 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define  LIBFT_H
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+
+# endif
+
 # include <ctype.h>
 # include <stdio.h>
 # include <string.h>
@@ -58,6 +63,10 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 void				ft_add_str(char *str, char caracter);
 unsigned int		ft_number_size(unsigned long long number);
 int					ft_strcmp(const char *s1, char *s2);
+char				*get_next_line(int fd);
+char				*ft_sub_2(char **rest, char **line, char **buf);
+char				*ft_sub(char **rest, char **line);
+
 /*
 Bonus
 */

@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:02 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/11 17:28:40 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/12 04:45:37 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //Aqui empieza el reparto de faena en el juego
 
-void	ft_play_game(char *map, t_game *a)
+void	ft_play_game(char *map, t_game *game)
 {
 	int	fd;
 
