@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/12 05:13:07 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/13 14:21:21 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 char	*ft_strjoin_sub(char *s1, char *s2)
 {
-	char *new;
-	char *tmp;
+	char	*new;
+	char	*tmp;
 
 	if (s1 == NULL)
 		return (ft_strtrim(s2, "\n"));
@@ -57,7 +57,7 @@ void	ft_check_map(t_game *map)
 		j--;
 		i--;
 	}
-	if (map->width > 26 || map->heigth > 14)
+	if (map->width > 30 || map->heigth > 20)
 		ft_error("Mapa no cabe en la ventana\n", map);
 }
 
@@ -103,7 +103,7 @@ int	ft_check_line(t_game *map, char **line, int fd)
 	return (i);
 }
 
-//Esta funcion leee mapa con GNL.
+//Esta funcion lee el mapa con GNL.
 //Después hace checkeos para ver si el mapa es valido
 void	parse_map(int fd, t_game *game)
 {
@@ -129,7 +129,7 @@ void	parse_map(int fd, t_game *game)
 			i++;
 		fd++;
 	}
-	if ((game->width == game->heigth) || game->players !=1
-			|| i == 0 || game->max_score == 0)
-			ft_error("Mapa no valido!\n", game);
+	if ((game->width == game->heigth) || game->players != 1
+		|| i == 0 || game->max_score == 0)
+		ft_error("Mapa no valido!\n", game);
 }

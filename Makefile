@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: osg <osg@student.42.fr>                    +#+  +:+       +#+         #
+#    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:11:16 by oseivane          #+#    #+#              #
-#    Updated: 2023/11/11 19:23:37 by osg              ###   ########.fr        #
+#    Updated: 2023/11/13 12:50:41 by oseivane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRC = 	so_long \
 		ft_error \
 		ft_frees \
 		parse_check_map \
+		parse_check_map2 \
 		render_all \
 		key_hook \
 		press_key \

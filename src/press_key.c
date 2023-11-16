@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   press_key.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 19:09:26 by osg               #+#    #+#             */
-/*   Updated: 2023/11/11 19:21:22 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/13 10:17:11 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_wkey(t_game *map)
 {
 	int	x;
 	int	i;
-	
+
 	x = map->width;
 	i = 0;
 	while (map->mapall[i] != 'P')
@@ -46,7 +46,7 @@ void	ft_skey(t_game *map)
 {
 	int	x;
 	int	i;
-	
+
 	x = map->width;
 	i = 0;
 	while (map->mapall[i] != 'P')
@@ -71,7 +71,7 @@ void	ft_skey(t_game *map)
 void	ft_dkey(t_game *map)
 {
 	int	i;
-	
+
 	i = 0;
 	while (map->mapall[i] != 'P')
 		i++;
@@ -95,7 +95,7 @@ void	ft_dkey(t_game *map)
 void	ft_akey(t_game *map)
 {
 	int	i;
-	
+
 	i = 0;
 	while (map->mapall[i] != 'P')
 		i++;

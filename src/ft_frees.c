@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:46:34 by osg               #+#    #+#             */
-/*   Updated: 2023/11/11 17:50:51 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/16 12:42:30 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,10 @@ int	ft_close(t_game *map)
 	mlx_destroy_window(map->mlx, map->win);
 	ft_free_map(map);
 	exit(EXIT_SUCCESS);
+}
+
+void	*free_str(void *str)
+{
+	free(str);
+	return (NULL);
 }

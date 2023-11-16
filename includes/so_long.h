@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/12 05:14:16 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/16 12:43:55 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_game
 {
 	void	*wall;
+	char	**map2d;
 	char	*mapall;
 	void	*item;
 	void	*exit;
@@ -45,11 +46,13 @@ void	ft_go(t_game *map);
 int		ft_format_ber(char *map_f);
 void	ft_error(char *str, t_game *game);
 void	ft_free_map(t_game *map);
+void	*free_str(void *str);
 int		ft_close(t_game *map);
 void	parse_map(int fd, t_game *game);
 int		ft_check_line(t_game *map, char **line, int fd);
 int		ft_check_line_sub(t_game *map, char **line, int i);
 void	ft_check_map(t_game *map);
+void	ft_check_map2(t_game *game, int fd);
 char	*ft_strjoin_sub(char *s1, char *s2);
 void	ft_map_r(t_game *map, int i);
 void	ft_img_r(t_game *map);
