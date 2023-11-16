@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:39:53 by osg               #+#    #+#             */
-/*   Updated: 2023/11/13 10:18:43 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:27:05 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,10 @@ void	ft_error(char *str, t_game *game)
 	ft_printf("Error\n");
 	ft_putstr_fd(str, 1);
 	exit(EXIT_FAILURE);
+}
+
+int	msg(char *str)
+{
+	ft_printf("%s", str);
+	exit (0);
 }

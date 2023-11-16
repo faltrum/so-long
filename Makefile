@@ -6,7 +6,7 @@
 #    By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/19 11:11:16 by oseivane          #+#    #+#              #
-#    Updated: 2023/11/13 12:50:41 by oseivane         ###   ########.fr        #
+#    Updated: 2023/11/16 14:54:55 by oseivane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRC = 	so_long \
 		ft_format_ber \
 		ft_error \
 		ft_frees \
+		checker \
 		parse_check_map \
 		parse_check_map2 \
 		render_all \

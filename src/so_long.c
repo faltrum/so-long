@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:23:03 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/11 17:19:43 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/16 13:32:00 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	ft_init_values(&game);
 	if (argc == 2)
 	{
-		ft_play_game(argv[1], &game);
+		ft_play_game(argv[1], &game, argv[1]);
 	}
 	ft_printf("Error\n");
 	return (0);

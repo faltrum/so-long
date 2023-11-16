@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:21:52 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/09 12:51:13 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:15:40 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_init_values(t_game *game)
 {
 	game->wall = NULL;
 	game->mapall = NULL;
+	game->map2d = NULL;
 	game->item = NULL;
 	game->exit = NULL;
 	game->player = NULL;

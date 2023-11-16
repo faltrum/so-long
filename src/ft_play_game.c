@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:02 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 13:06:45 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:43:42 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //Aqui empieza el reparto de faena en el juego
 
-void	ft_play_game(char *map, t_game *game)
+void	ft_play_game(char *map, t_game *game, char *str)
 {
 	int	fd;
 
@@ -24,6 +24,6 @@ void	ft_play_game(char *map, t_game *game)
 	if (fd == -1)
 		ft_error("No hay fichero o directorio!\n", game);
 	parse_map(fd, game);
+	ft_check_map2(game, str);
 	ft_go(game);
-	ft_check_map2(game, fd);
 }

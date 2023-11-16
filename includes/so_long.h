@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 13:02:43 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:51:53 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdbool.h>
 # include "../mlx/mlx.h"
 # include "../libraries/libft/libft.h"
 # include "../libraries/ft_printf/ft_printf.h"
@@ -40,21 +41,27 @@ typedef struct s_game
 	int		max_score;
 }	t_game;
 
-void	ft_play_game(char *argv, t_game *game);
+void	ft_play_game(char *argv, t_game *game, char *str);
 void	ft_init_values(t_game *game);
 void	ft_go(t_game *map);
 int		ft_format_ber(char *map_f);
 void	ft_error(char *str, t_game *game);
 void	ft_free_map(t_game *map);
+void	print_map_copy(t_game *game);
 void	*free_str(void *str);
+int		msg(char *str);
 int		ft_close(t_game *map);
 void	parse_map(int fd, t_game *game);
 int		ft_check_line(t_game *map, char **line, int fd);
 int		ft_check_line_sub(t_game *map, char **line, int i);
 void	ft_check_map(t_game *map);
-void	ft_check_map2(t_game *game, int fd);
-void	create_map_line(t_game *game, int fd);
+void	ft_check_map2(t_game *game, char *str);
+bool	is_valid_move(t_game *game, int row, int col);
+bool	find_path(t_game *game, int row, int col);
+void	init_and_use_map2d(t_game *game, size_t *s_row, size_t *s_col);
+void	create_map_line(t_game *game, char *str);
 void	create_map_length(char *area, t_game *game, int i);
+void	checker(t_game *game);
 char	*ft_strjoin_sub(char *s1, char *s2);
 void	ft_map_r(t_game *map, int i);
 void	ft_img_r(t_game *map);

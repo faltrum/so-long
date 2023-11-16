@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:46:34 by osg               #+#    #+#             */
-/*   Updated: 2023/11/16 12:42:30 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 14:58:26 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 void	ft_free_map(t_game *map)
 {
 	free(map->mapall);
+	free(map->map2d);
 	if (map->mlx)
 		free(map->mlx);
 }
@@ -33,4 +34,28 @@ void	*free_str(void *str)
 {
 	free(str);
 	return (NULL);
+}
+
+void	print_map_copy(t_game *game)
+{
+	int	rows;
+	int	cols;
+	int	i;
+	int	j;
+
+	i = 0;
+
+	cols = game->width;
+	rows = game->heigth;
+	while (i < rows)
+	{
+		j = 0;
+		while (j < cols)
+		{
+			ft_printf("%c", game->map2d[i][j]);
+			j++;
+		}
+		ft_printf("\n");
+		i++;
+	}
 }
