@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 12:45:02 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 11:59:59 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:06:45 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_play_game(char *map, t_game *game)
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
 		ft_error("No hay fichero o directorio!\n", game);
-	ft_check_map2(game, fd);
 	parse_map(fd, game);
 	ft_go(game);
+	ft_check_map2(game, fd);
 }

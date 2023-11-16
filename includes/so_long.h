@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 12:43:55 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:02:43 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int		ft_check_line(t_game *map, char **line, int fd);
 int		ft_check_line_sub(t_game *map, char **line, int i);
 void	ft_check_map(t_game *map);
 void	ft_check_map2(t_game *game, int fd);
+void	create_map_line(t_game *game, int fd);
+void	create_map_length(char *area, t_game *game, int i);
 char	*ft_strjoin_sub(char *s1, char *s2);
 void	ft_map_r(t_game *map, int i);
 void	ft_img_r(t_game *map);
