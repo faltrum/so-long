@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/17 11:14:28 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 12:11:48 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_go(t_game *map);
 int		ft_format_ber(char *map_f);
 void	ft_error(char *str, t_game *game);
 void	ft_free_map(t_game *map);
+int		ft_free_map2d(t_game *map);
 void	print_map_copy(t_game *game);
 void	*free_str(void *str);
 int		msg(char *str);

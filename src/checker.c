@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:19:41 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/17 11:16:52 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 12:04:21 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,10 @@ void	checker(t_game *game)
 	init_and_use_map2d(game, &start_row, &start_col);
 	find_path(game, start_row, start_col);
 	if (game->exit && game->item == game->max_gift)
+	{
 		ft_printf("\n");
+		ft_free_map2d(game);
+	}
 	else
 		msg("The map has no solution\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:46:34 by osg               #+#    #+#             */
-/*   Updated: 2023/11/16 14:58:26 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:11:02 by mcatalan@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,26 @@
 void	ft_free_map(t_game *map)
 {
 	free(map->mapall);
-	free(map->map2d);
 	if (map->mlx)
 		free(map->mlx);
+}
+
+int	ft_free_map2d(t_game *game)
+{
+	int	i;
+
+	i = 0;
+	if (!game->map2d)
+		return (1);
+	while (game->map2d[i])
+	{
+		free(game->map2d[i]);
+		i++;
+	}
+	free(game->map2d);
+	if (game->mlx)
+		free(game->mlx);
+	return (0);
 }
 
 // Funcion que cierra ventana y libera lo anterior
