@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/17 11:18:48 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 14:56:58 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_check_line_sub(t_game *map, char **line, int i)
 	if ((*line)[i] != '1')
 	{
 		free(*line);
-		ft_error("Mapa no valido 3!\n", map);
+		ft_error("Not walled!\n", map);
 	}
 	return (1);
 }
@@ -87,7 +87,7 @@ int	ft_check_line(t_game *map, char **line, int fd)
 				&& (*line)[i] != 'E' && (*line)[i] != 'P')
 		{
 			free(*line);
-			ft_error("Mapa no valido 4\n", map);
+			ft_error("Other characters\n", map);
 		}
 		i++;
 	}
@@ -97,7 +97,7 @@ int	ft_check_line(t_game *map, char **line, int fd)
 	free(tmp);
 	free(*line);
 	if (i != map->width && map->width != 0)
-		ft_error("Mapa no valido 5\n", map);
+		ft_error("No rectangular, deforme\n", map);
 	*line = get_next_line(fd);
 	map->heigth++;
 	return (i);
@@ -131,5 +131,5 @@ void	parse_map(int fd, t_game *game)
 	}
 	if ((game->width == game->heigth) || game->players != 1
 		|| i == 0 || game->max_score == 0)
-		ft_error("Mapa no valido! 7\n", game);
+		ft_error("Mapa no rectangular, con más de 1 player , sin colectibles o sin exit!\n", game);
 }
