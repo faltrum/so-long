@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/13 14:21:21 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:52:15 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,6 @@ void	parse_map(int fd, t_game *game)
 		fd++;
 	}
 	if ((game->width == game->heigth) || game->players != 1
-		|| i == 0 || game->max_score == 0)
+		|| i == 0 || game->max_score == NULL)
 		ft_error("Mapa no valido!\n", game);
 }
