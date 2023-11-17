@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:21:52 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/17 10:40:12 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 11:15:52 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_init_values(t_game *game)
 	game->players = 0;
 	game->gameover = 0;
 	game->steps = 0;
-	game->score = NULL;
-	game->max_score = NULL;
+	game->gift = NULL;
+	game->max_gift = NULL;
+	game->score = 0;
+	game->max_score = 0;
 }

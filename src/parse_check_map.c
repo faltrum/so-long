@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/17 10:52:15 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 11:18:48 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_check_map(t_game *map)
 	while (i > -1)
 	{
 		if (map->mapall[i] != '1')
-			ft_error("Mapa no valido!\n", map);
+			ft_error("Mapa no valido 1!\n", map);
 		i--;
 	}
 	i = map->width;
@@ -53,7 +53,7 @@ void	ft_check_map(t_game *map)
 	while (i > -1)
 	{
 		if (map->mapall[j - 1] != '1')
-			ft_error("Mapa no valido!\n", map);
+			ft_error("Mapa no valido 2!\n", map);
 		j--;
 		i--;
 	}
@@ -68,7 +68,7 @@ int	ft_check_line_sub(t_game *map, char **line, int i)
 	if ((*line)[i] != '1')
 	{
 		free(*line);
-		ft_error("Mapa no valido!\n", map);
+		ft_error("Mapa no valido 3!\n", map);
 	}
 	return (1);
 }
@@ -87,7 +87,7 @@ int	ft_check_line(t_game *map, char **line, int fd)
 				&& (*line)[i] != 'E' && (*line)[i] != 'P')
 		{
 			free(*line);
-			ft_error("Mapa no valido\n", map);
+			ft_error("Mapa no valido 4\n", map);
 		}
 		i++;
 	}
@@ -97,7 +97,7 @@ int	ft_check_line(t_game *map, char **line, int fd)
 	free(tmp);
 	free(*line);
 	if (i != map->width && map->width != 0)
-		ft_error("Mapa no valido\n", map);
+		ft_error("Mapa no valido 5\n", map);
 	*line = get_next_line(fd);
 	map->heigth++;
 	return (i);
@@ -112,7 +112,7 @@ void	parse_map(int fd, t_game *game)
 
 	line = get_next_line(fd);
 	if (!line)
-		ft_error("Mapa no valido!\n", game);
+		ft_error("Mapa no valido! 6\n", game);
 	while (line != NULL)
 		game->width = ft_check_line(game, &line, fd);
 	close(fd);
@@ -130,6 +130,6 @@ void	parse_map(int fd, t_game *game)
 		fd++;
 	}
 	if ((game->width == game->heigth) || game->players != 1
-		|| i == 0 || game->max_score == NULL)
-		ft_error("Mapa no valido!\n", game);
+		|| i == 0 || game->max_score == 0)
+		ft_error("Mapa no valido! 7\n", game);
 }

@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:19:41 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/17 10:13:36 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/17 11:16:52 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	is_valid_move(t_game *game, int row, int col)
 			|| game->map2d[row][col] == '0'))
 	{
 		if (game->map2d[row][col] == 'C')
-			game->score++;
+			game->gift++;
 		else if (game->map2d[row][col] == 'E')
 			game->exit = (void *)true;
 		return (true);
@@ -93,7 +93,7 @@ void	checker(t_game *game)
 
 	init_and_use_map2d(game, &start_row, &start_col);
 	find_path(game, start_row, start_col);
-	if (game->exit && game->item == game->max_score)
+	if (game->exit && game->item == game->max_gift)
 		ft_printf("\n");
 	else
 		msg("The map has no solution\n");
