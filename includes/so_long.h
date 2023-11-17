@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 14:51:53 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:14:01 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_game
 	int		players;
 	int		gameover;
 	int		steps;
-	int		score;
-	int		max_score;
+	int		*score;
+	int		*max_score;
 }	t_game;
 
 void	ft_play_game(char *argv, t_game *game, char *str);
