@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_values.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:21:52 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 13:15:40 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:37:22 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ void	ft_init_values(t_game *game)
 	game->gameover = 0;
 	game->steps = 0;
 	game->score = 0;
-	game->max_score = 0;
+	game->max_score = NULL;
 }

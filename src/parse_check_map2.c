@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check_map2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:05:45 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/16 14:53:47 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/17 10:34:14 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,4 @@ void	ft_check_map2(t_game *game, char *str)
 {
 	create_map_line(game, str);
 	checker(game);
-	print_map_copy(game);
 }
