@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/17 14:56:58 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/18 22:38:58 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,6 @@ void	parse_map(int fd, t_game *game)
 		game->width = ft_check_line(game, &line, fd);
 	close(fd);
 	ft_check_map(game);
-	i = 0;
 	fd = 0;
 	while (game->mapall[fd])
 	{
@@ -130,6 +129,25 @@ void	parse_map(int fd, t_game *game)
 		fd++;
 	}
 	if ((game->width == game->heigth) || game->players != 1
-		|| i == 0 || game->max_score == 0)
-		ft_error("Mapa no rectangular, con más de 1 player , sin colectibles o sin exit!\n", game);
+		|| i != 1 || game->max_score == 0)
+		{
+			if (game->width == game->heigth)
+				ft_error("Mapa cuadrado\n", game);
+			else if (game->players != 1)
+			{
+				if (game->players == 0)
+					ft_error("No hay player\n", game);
+				else
+					ft_error("Más de 1 player\n", game);
+			}
+			else if (i != 1)
+			{
+				if (i == 0)
+					ft_error("No hay salida\n", game);
+				else
+					ft_error("Hay más de una salida\n", game);
+			}
+			else
+				ft_error("¡Mapa sin colectibles!\n", game);
+		}
 }
