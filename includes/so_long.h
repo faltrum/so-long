@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/17 12:11:48 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/21 10:21:30 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_game
 	char	**map2d;
 	char	*mapall;
 	void	*item;
+	void	*item2d;
 	void	*exit;
 	void	*player;
 	void	*space;

@@ -6,7 +6,7 @@
 /*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:19:41 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/18 22:40:37 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/21 10:21:42 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	checker(t_game *game)
 
 	init_and_use_map2d(game, &start_row, &start_col);
 	find_path(game, start_row, start_col);
-	if (game->exit && game->gift == game->max_gift)
+	if (game->exit && game->item2d == game->max_gift)
 	{
 		ft_printf("\n");
 		ft_free_map2d(game);

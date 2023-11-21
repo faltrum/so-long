@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/19 17:20:14 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/21 10:18:51 by osg              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,10 @@ int	ft_check_line(t_game *map, char **line, int fd)
 //Después hace checkeos para ver si el mapa es valido
 void	parse_map(int fd, t_game *game)
 {
-	int		i = 0;
+	int		i;
 	char	*line;
 
+	i = 0;
 	line = get_next_line(fd);
 	if (!line)
 		ft_error("Mapa no valido! 6\n", game);
