@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:19:41 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/21 10:42:32 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/23 10:13:33 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	is_valid_move(t_game *game, int row, int col)
 			|| game->map2d[row][col] == '0'))
 	{
 		if (game->map2d[row][col] == 'C')
-			game->gift++;
+			game->item2d++;
 		else if (game->map2d[row][col] == 'E')
 			game->exit = (void *)true;
 		return (true);
