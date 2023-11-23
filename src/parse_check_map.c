@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_check_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:56:54 by osg               #+#    #+#             */
-/*   Updated: 2023/11/21 10:18:51 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/23 10:34:05 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,24 +131,5 @@ void	parse_map(int fd, t_game *game)
 	}
 	if ((game->width == game->heigth) || game->players != 1
 		|| i != 1 || game->max_score == 0)
-		{
-			if (game->width == game->heigth)
-				ft_error("Mapa cuadrado\n", game);
-			else if (game->players != 1)
-			{
-				if (game->players == 0)
-					ft_error("No hay player\n", game);
-				else
-					ft_error("Más de 1 player\n", game);
-			}
-			else if (i != 1)
-			{
-				if (i == 0)
-					ft_error("No hay salida\n", game);
-				else
-					ft_error("Hay más de una salida\n", game);
-			}
-			else
-				ft_error("¡Mapa sin colectibles!\n", game);
-		}
+		ft_error_map(game, i);
 }

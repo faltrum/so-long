@@ -6,7 +6,7 @@
 /*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:19:41 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/23 10:13:33 by oseivane         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:03:13 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool	is_valid_move(t_game *game, int row, int col)
 		if (game->map2d[row][col] == 'C')
 			game->item2d++;
 		else if (game->map2d[row][col] == 'E')
-			game->exit = (void *)true;
+			game->exit2++;
 		return (true);
 	}
 	return (false);
@@ -90,11 +90,10 @@ void	checker(t_game *game)
 {
 	size_t	start_row;
 	size_t	start_col;
-	
-	game->item2d = game->item;
+
 	init_and_use_map2d(game, &start_row, &start_col);
 	find_path(game, start_row, start_col);
-	if (game->exit && game->item2d == game->max_gift)
+	if (game->exit2 && game->item2d == game->max_score)
 	{
 		ft_printf("\n");
 		ft_free_map2d(game);
@@ -102,4 +101,3 @@ void	checker(t_game *game)
 	else
 		msg("The map has no solution\n");
 }
-

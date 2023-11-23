@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osg <osg@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 11:35:34 by oseivane          #+#    #+#             */
-/*   Updated: 2023/11/21 10:21:30 by osg              ###   ########.fr       */
+/*   Updated: 2023/11/23 10:58:14 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,20 @@ typedef struct s_game
 	char	**map2d;
 	char	*mapall;
 	void	*item;
-	void	*item2d;
+	int		item2d;
 	void	*exit;
 	void	*player;
 	void	*space;
 	void	*mlx;
 	void	*win;
+	int		exit2;
 	int		width;
 	int		heigth;
 	int		players;
 	int		gameover;
 	int		steps;
 	int		*gift;
-	int		*max_gift;
+	int		max_gift;
 	int		score;
 	int		max_score;
 }	t_game;
@@ -49,6 +50,7 @@ void	ft_init_values(t_game *game);
 void	ft_go(t_game *map);
 int		ft_format_ber(char *map_f);
 void	ft_error(char *str, t_game *game);
+void	ft_error_map(t_game *game, int i);
 void	ft_free_map(t_game *map);
 int		ft_free_map2d(t_game *map);
 void	print_map_copy(t_game *game);

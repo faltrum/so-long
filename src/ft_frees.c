@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_frees.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatalan@student.42barcelona.com <mcata    +#+  +:+       +#+        */
+/*   By: oseivane <oseivane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:46:34 by osg               #+#    #+#             */
-/*   Updated: 2023/11/17 12:11:02 by mcatalan@st      ###   ########.fr       */
+/*   Updated: 2023/11/23 10:18:59 by oseivane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	print_map_copy(t_game *game)
 	int	j;
 
 	i = 0;
-
 	cols = game->width;
 	rows = game->heigth;
 	while (i < rows)
